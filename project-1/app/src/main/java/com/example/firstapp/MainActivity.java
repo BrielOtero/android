@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
+                                                                 protected void onResume() {
         super.onResume();
         Log.i(TAG,"Test");
     }
