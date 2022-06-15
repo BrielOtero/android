@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG="MainActivity";
@@ -12,6 +14,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.v(TAG,"Test");
+
+        Toast toast=Toast.makeText(getApplicationContext(), "Prueba de Toast", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER|Gravity.LEFT, 0, 10);
+        toast.show();
+
     }
 
     @Override
@@ -48,4 +55,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
     }
+
+
 }
