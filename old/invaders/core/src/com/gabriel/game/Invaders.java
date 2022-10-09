@@ -64,7 +64,7 @@ public class Invaders extends Game {
 				setScreen(new GameLoop(this));
 			} else {
 				// if the current screen is a game loop screen we switch to the
-				// game over screen
+				// game over screenthis
 				if (currentScreen instanceof GameLoop) {
 					setScreen(new GameOver(this));
 				} else if (currentScreen instanceof GameOver) {

@@ -66,7 +66,7 @@ public class Renderer {
 
             font = new BitmapFont(Gdx.files.internal("data/font10.fnt"), Gdx.files.internal("data/font10.png"), false);
 
-            camera = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            camera = new PerspectiveCamera(80, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -123,7 +123,7 @@ public class Renderer {
 
     private void setProjectionAndCamera (Ship ship) {
         ship.transform.getTranslation(tmpV);
-        camera.position.set(tmpV.x, 6, 2);
+        camera.position.set(tmpV.x, 0, 0);
         camera.direction.set(tmpV.x, 0, -4).sub(camera.position).nor();
         camera.update();
     }

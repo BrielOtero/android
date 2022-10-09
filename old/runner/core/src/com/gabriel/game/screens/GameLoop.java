@@ -89,14 +89,14 @@ public class GameLoop extends InvadersScreen implements SimulationListener {
     public void update(float delta) {
         simulation.update(delta);
 
-            float gyro = Gdx.input.getAccelerometerX();
-            Gdx.app.log(TAG, String.valueOf(gyro));
-
-            if (gyro < 0) {
-                simulation.moveShipRight(delta,  Math.abs(gyro) / 10);
-            } else {
-                simulation.moveShipLeft(delta,  Math.abs(gyro) / 10);
-            }
+//            float gyro = Gdx.input.getAccelerometerX();
+//            Gdx.app.log(TAG, String.valueOf(gyro));
+//
+//            if (gyro < 0) {
+//                simulation.moveShipRight(delta,  Math.abs(gyro) / 10);
+//            } else {
+//                simulation.moveShipLeft(delta,  Math.abs(gyro) / 10);
+//            }
 
         if (invaders.getController() != null) {
             if (buttonsPressed > 0) {

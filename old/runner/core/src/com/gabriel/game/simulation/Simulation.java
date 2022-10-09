@@ -17,7 +17,6 @@ import com.badlogic.gdx.graphics.g3d.loader.ObjLoader;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
 import com.badlogic.gdx.graphics.g3d.model.Node;
 import com.badlogic.gdx.graphics.g3d.model.NodePart;
-import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Disposable;
 
@@ -25,17 +24,17 @@ import com.badlogic.gdx.utils.Disposable;
 import java.util.ArrayList;
 
 public class Simulation implements Disposable {
-    public final static float PLAYFIELD_MIN_X = -14;
-    public final static float PLAYFIELD_MAX_X = 14;
-    public final static float PLAYFIELD_MIN_Z = -15;
+    public final static float PLAYFIELD_MIN_X = -3;
+    public final static float PLAYFIELD_MAX_X = 3;
+    public final static float PLAYFIELD_MIN_Z = -20;
     public final static float PLAYFIELD_MAX_Z = 2;
 
     public ArrayList<Invader> invaders = new ArrayList<Invader>();
     public ArrayList<Block> blocks = new ArrayList<Block>();
-    public ArrayList<Shot> shots = new ArrayList<Shot>();
+    public ArrayList<Slide> shots = new ArrayList<Slide>();
     public ArrayList<Explosion> explosions = new ArrayList<Explosion>();
     public Ship ship;
-    public Shot shipShot = null;
+    public Slide shipShot = null;
     public transient SimulationListener listener;
     public float multiplier = 1;
     public int score;
@@ -47,7 +46,7 @@ public class Simulation implements Disposable {
     public Model shotModel;
     public Model explosionModel;
 
-    private ArrayList<Shot> removedShots = new ArrayList<Shot>();
+    private ArrayList<Slide> removedSlides = new ArrayList<Slide>();
     private ArrayList<Explosion> removedExplosions = new ArrayList<Explosion>();
 
     private final Vector3 tmpV1 = new Vector3();
@@ -152,20 +151,25 @@ public class Simulation implements Disposable {
         ship = new Ship(shipModel);
         ship.transform.rotate(0, 1, 0, 180);
 
-        for (int row = 0; row < 4; row++) {
-            for (int column = 0; column < 8; column++) {
-                Invader invader = new Invader(invaderModel, -PLAYFIELD_MAX_X / 2 + column * 2f, 0, PLAYFIELD_MIN_Z + row * 2f);
-                invaders.add(invader);
-            }
-        }
+//        for (int row = 0; row < 4; row++) {
+//            for (int column = 0; column < 8; column++) {
+//                Invader invader = new Invader(invaderModel, -PLAYFIELD_MAX_X / 2 + column * 2f, 0, PLAYFIELD_MIN_Z + row * 2f);
+//                invaders.add(invader);
+//            }
+//        }
+        int column = 2;
+        int row = 1;
 
-        for (int shield = 0; shield < 3; shield++) {
-            blocks.add(new Block(blockModel, -10 + shield * 10 - 1, 0, -2));
-            blocks.add(new Block(blockModel, -10 + shield * 10 - 1, 0, -3));
-            blocks.add(new Block(blockModel, -10 + shield * 10 + 0, 0, -3));
-            blocks.add(new Block(blockModel, -10 + shield * 10 + 1, 0, -3));
-            blocks.add(new Block(blockModel, -10 + shield * 10 + 1, 0, -2));
-        }
+        Invader invader = new Invader(invaderModel, -PLAYFIELD_MAX_X / 2 + column * 2f, 0, PLAYFIELD_MIN_Z + row * 2f);
+        invaders.add(invader);
+
+//        for (int shield = 0; shield < 3; shield++) {
+//            blocks.add(new Block(blockModel, -10 + shield * 10 - 1, 0, -2));
+//            blocks.add(new Block(blockModel, -10 + shield * 10 - 1, 0, -3));
+//            blocks.add(new Block(blockModel, -10 + shield * 10 + 0, 0, -3));
+//            blocks.add(new Block(blockModel, -10 + shield * 10 + 1, 0, -3));
+//            blocks.add(new Block(blockModel, -10 + shield * 10 + 1, 0, -2));
+//        }
     }
 
     public void update (float delta) {
@@ -187,22 +191,22 @@ public class Simulation implements Disposable {
     }
 
     private void updateShots (float delta) {
-        removedShots.clear();
+        removedSlides.clear();
         for (int i = 0; i < shots.size(); i++) {
-            Shot shot = shots.get(i);
+            Slide shot = shots.get(i);
             shot.update(delta);
-            if (shot.hasLeftField) removedShots.add(shot);
+            if (shot.hasLeftField) removedSlides.add(shot);
         }
 
-        for (int i = 0; i < removedShots.size(); i++)
-            shots.remove(removedShots.get(i));
+        for (int i = 0; i < removedSlides.size(); i++)
+            shots.remove(removedSlides.get(i));
 
         if (shipShot != null && shipShot.hasLeftField) shipShot = null;
 
         if (Math.random() < 0.01 * multiplier && invaders.size() > 0) {
             int index = (int)(Math.random() * (invaders.size() - 1));
             invaders.get(index).transform.getTranslation(tmpV1);
-            Shot shot = new Shot(shotModel, tmpV1, true);
+            Slide shot = new Slide(shotModel, tmpV1, true);
             shots.add(shot);
             if (listener != null) listener.shot();
         }
@@ -240,16 +244,16 @@ public class Simulation implements Disposable {
     }
 
     private void checkShipCollision () {
-        removedShots.clear();
+        removedSlides.clear();
 
         if (!ship.isExploding) {
             ship.transform.getTranslation(tmpV1);
             for (int i = 0; i < shots.size(); i++) {
-                Shot shot = shots.get(i);
+                Slide shot = shots.get(i);
                 if (!shot.isInvaderShot) continue;
                 shot.transform.getTranslation(tmpV2);
                 if (tmpV1.dst(tmpV2) < Ship.SHIP_RADIUS) {
-                    removedShots.add(shot);
+                    removedSlides.add(shot);
                     shot.hasLeftField = true;
                     ship.lives--;
                     ship.isExploding = true;
@@ -259,8 +263,8 @@ public class Simulation implements Disposable {
                 }
             }
 
-            for (int i = 0; i < removedShots.size(); i++)
-                shots.remove(removedShots.get(i));
+            for (int i = 0; i < removedSlides.size(); i++)
+                shots.remove(removedSlides.get(i));
         }
 
         ship.transform.getTranslation(tmpV2);
@@ -280,17 +284,17 @@ public class Simulation implements Disposable {
     }
 
     private void checkBlockCollision () {
-        removedShots.clear();
+        removedSlides.clear();
 
         for (int i = 0; i < shots.size(); i++) {
-            Shot shot = shots.get(i);
+            Slide shot = shots.get(i);
             shot.transform.getTranslation(tmpV2);
 
             for (int j = 0; j < blocks.size(); j++) {
                 Block block = blocks.get(j);
                 block.transform.getTranslation(tmpV1);
                 if (tmpV1.dst(tmpV2) < Block.BLOCK_RADIUS) {
-                    removedShots.add(shot);
+                    removedSlides.add(shot);
                     shot.hasLeftField = true;
                     blocks.remove(block);
                     break;
@@ -298,8 +302,8 @@ public class Simulation implements Disposable {
             }
         }
 
-        for (int i = 0; i < removedShots.size(); i++)
-            shots.remove(removedShots.get(i));
+        for (int i = 0; i < removedSlides.size(); i++)
+            shots.remove(removedSlides.get(i));
     }
 
     private void checkNextLevel () {
@@ -336,7 +340,7 @@ public class Simulation implements Disposable {
     public void shot () {
         if (shipShot == null && !ship.isExploding) {
             ship.transform.getTranslation(tmpV1);
-            shipShot = new Shot(shotModel, tmpV1, false);
+            shipShot = new Slide(shotModel, tmpV1, false);
             shots.add(shipShot);
             if (listener != null) listener.shot();
         }
