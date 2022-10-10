@@ -1,14 +1,23 @@
 package com.example.a05_exercise;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.media.Rating;
 import android.nfc.FormatException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
+import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -32,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         RadioButton rd1 = findViewById(R.id.radioButton);
         RadioButton rd2 = findViewById(R.id.radioButton2);
         Button btn2 = findViewById(R.id.button2);
+        ImageButton imgBtn2 = findViewById(R.id.imageButton2);
         TextView textView5 = findViewById(R.id.textView5);
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -83,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 try {
                     int value = Integer.parseInt(textView5.getText() + "");
                     if (chkSecond.isChecked()) {
@@ -98,6 +109,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
+        });
+
+        imgBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText personName = findViewById(R.id.editTextTextPersonName5);
+                RatingBar ratingBar = findViewById(R.id.ratingBar);
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("edittext", personName.getText().toString());
+                intent.putExtra("stars", ratingBar.getRating());
+                startActivity(intent);
+            }
         });
 
         rd1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
