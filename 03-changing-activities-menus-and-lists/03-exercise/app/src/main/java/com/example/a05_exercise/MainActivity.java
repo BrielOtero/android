@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.media.Rating;
+import android.net.Uri;
 import android.nfc.FormatException;
 import android.os.Bundle;
 import android.util.Log;
@@ -153,6 +154,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 Toast.makeText(MainActivity.this, "Radiobutton 2", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button btn4 = findViewById(R.id.button4);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String number="688940501";
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" +number));
+                startActivity(intent);
+
+                //Para llamar Intent.Action_CALL y añadir el permiso en el manifest
             }
         });
 
