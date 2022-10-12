@@ -2,13 +2,21 @@ package com.gabriel.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.gabriel.game.assets.GameAssets;
 import com.gabriel.game.screens.BeatSlideScreen;
 import com.gabriel.game.screens.GameLoop;
 
+import net.mgsx.gltf.scene3d.scene.SceneManager;
+
 public class BeatSlide extends Game {
+    //Scene Manager
+    public static SceneManager sceneManager;
 
     @Override
     public void create() {
+        GameAssets.i = new GameAssets();
+        sceneManager = new SceneManager();
+
         setScreen(new GameLoop(this));
     }
 

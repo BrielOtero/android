@@ -5,10 +5,18 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Cubemap;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g3d.Environment;
+import com.badlogic.gdx.graphics.g3d.ModelBatch;
+import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.utils.FirstPersonCameraController;
+import com.badlogic.gdx.math.Matrix4;
+import com.badlogic.gdx.math.Vector3;
 import com.gabriel.game.game.GamePlay;
-import com.gabriel.game.game.Player;
+import com.gabriel.game.entities.Player;
 
 import net.mgsx.gltf.loaders.gltf.GLTFLoader;
 import net.mgsx.gltf.scene3d.attributes.PBRCubemapAttribute;
@@ -30,14 +38,27 @@ public class Renderer {
     //Developer mode
     private Boolean debugMode;
 
-    //Scene Manager
-    private SceneManager sceneManager;
+    /**
+     * sprite batch to draw text
+     **/
+    private SpriteBatch spriteBatch;
 
-    //Scene Asset
-    private SceneAsset sceneAsset;
+    /**
+     * the directional light
+     **/
+    Environment lights;
 
-    //Scene
-    private Scene scene;
+    ModelBatch modelBatch;
+
+    /**
+     * the background texture
+     **/
+    private Texture backgroundTexture;
+
+    private final Matrix4 viewMatrix = new Matrix4();
+
+    final Vector3 tmpV = new Vector3();
+
 
     //Perspective camera
     private PerspectiveCamera camera;
@@ -46,90 +67,92 @@ public class Renderer {
     private FirstPersonCameraController firstPersonCameraController;
 
 
-    private Cubemap diffuseCubemap;
-    private Cubemap environmentCubemap;
-    private Cubemap specularCubemap;
-    private Texture brdfLUT;
-    private float time;
-    private SceneSkybox skybox;
-    private DirectionalLightEx light;
-
-
     public Renderer() {
-        debugMode=true;
+        debugMode = true;
 
-        sceneAsset = new GLTFLoader().load(Gdx.files.internal("models/saber-blue.gltf"));
-        scene = new Scene(sceneAsset.scene);
-        sceneManager = new SceneManager();
-        sceneManager.addScene(scene);
 
-        camera = new PerspectiveCamera(60f, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        float d = .02f;
-        camera.near = d / 1000f;
-        camera.far = 200;
-        sceneManager.setCamera(camera);
+        lights = new Environment();
+        lights.add(new DirectionalLight().set(Color.WHITE, new Vector3(-1, -0.5f, 0).nor()));
+
+        spriteBatch = new SpriteBatch();
+        modelBatch = new ModelBatch();
+
+        backgroundTexture = new Texture(Gdx.files.classpath("net/mgsx/gltf/shaders/brdfLUT.png"));
+        backgroundTexture.setFilter(Texture.TextureFilter.MipMap, Texture.TextureFilter.Linear);
+
+//        font = new BitmapFont(Gdx.files.internal("data/font10.fnt"), Gdx.files.internal("data/font10.png"), false);
+
+        camera = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         if (debugMode) {
             firstPersonCameraController = new FirstPersonCameraController(camera);
             Gdx.input.setInputProcessor(firstPersonCameraController);
         }
 
-        // setup light
-        light = new DirectionalLightEx();
-        light.direction.set(1, -3, 1).nor();
-        light.color.set(Color.WHITE);
-        sceneManager.environment.add(light);
 
-        // setup quick IBL (image based lighting)
-        IBLBuilder iblBuilder = IBLBuilder.createOutdoor(light);
-        environmentCubemap = iblBuilder.buildEnvMap(1024);
-        diffuseCubemap = iblBuilder.buildIrradianceMap(256);
-        specularCubemap = iblBuilder.buildRadianceMap(10);
-        iblBuilder.dispose();
+    }
 
-        // This texture is provided by the library, no need to have it in your assets.
-        brdfLUT = new Texture(Gdx.files.classpath("net/mgsx/gltf/shaders/brdfLUT.png"));
+    public void render(GamePlay gamePlay, float delta) {
+        // We explicitly require GL10, otherwise we could've used the GLCommon
+        // interface via Gdx.gl
 
-        sceneManager.setAmbientLight(1f);
-        sceneManager.environment.set(new PBRTextureAttribute(PBRTextureAttribute.BRDFLUTTexture, brdfLUT));
-        sceneManager.environment.set(PBRCubemapAttribute.createSpecularEnv(specularCubemap));
-        sceneManager.environment.set(PBRCubemapAttribute.createDiffuseEnv(diffuseCubemap));
+        GL20 gl = Gdx.gl;
+        gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
+        renderBackground();
+        gl.glEnable(GL20.GL_DEPTH_TEST);
+        gl.glEnable(GL20.GL_CULL_FACE);
 
-        // setup skybox
-        skybox = new SceneSkybox(environmentCubemap);
-        sceneManager.setSkyBox(skybox);
 
+        setProjectionAndCamera();
+
+        modelBatch.begin(firstPersonCameraController);
+//        modelBatch.render(simulation.explosions);
+//        if (!simulation.ship.isExploding) modelBatch.render(simulation.ship, lights);
+        modelBatch.render(gamePlay.player.leftS, lights);
+//        modelBatch.render(simulation.blocks);
+//        modelBatch.render(simulation.shots);
+        modelBatch.end();
+
+        gl.glDisable(GL20.GL_CULL_FACE);
+        gl.glDisable(GL20.GL_DEPTH_TEST);
+
+//        spriteBatch.setProjectionMatrix(viewMatrix);
+//        spriteBatch.begin();
+//        if (simulation.ship.lives != lastLives || simulation.score != lastScore || simulation.wave != lastWave) {
+//            status = "lives: " + simulation.ship.lives + " wave: " + simulation.wave + " score: " + simulation.score;
+//            lastLives = simulation.ship.lives;
+//            lastScore = simulation.score;
+//            lastWave = simulation.wave;
+//        }
+//        spriteBatch.enableBlending();
+//        font.draw(spriteBatch, status, 0, 320);
+//        spriteBatch.end();
+
+//        invaderAngle += delta * 90;
+//        if (invaderAngle > 360) invaderAngle -= 360;
 
 
     }
 
-    public void render(GamePlay gamePlay, float delta){
-//        GL20 gl = Gdx.gl;
-//        gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
-////        renderBackground();
-//        gl.glEnable(GL20.GL_DEPTH_TEST);
-//        gl.glEnable(GL20.GL_CULL_FACE);
-////        setProjectionAndCamera(gamePlay.player);
-
-        float deltaTime = Gdx.graphics.getDeltaTime();
-        time += deltaTime;
-
-        firstPersonCameraController.update();
-
-        // animate camera
-//        camera.position.setFromSpherical(MathUtils.PI / 4, time * .3f).scl(.02f);
-//        camera.up.set(Vector3.Y);
-//        camera.lookAt(Vector3.Zero);
-//        camera.update();
-
-        // render
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
-        sceneManager.update(deltaTime);
-        sceneManager.render();
+    private void renderBackground() {
+        viewMatrix.setToOrtho2D(0, 0, 400, 320);
+        spriteBatch.setProjectionMatrix(viewMatrix);
+        spriteBatch.begin();
+        spriteBatch.disableBlending();
+        spriteBatch.setColor(Color.WHITE);
+        spriteBatch.draw(backgroundTexture, 0, 0, 480, 320, 0, 0, 512, 512, false, false);
+        spriteBatch.end();
     }
 
-    private void setProjectionAndCamera(Player player){
+    private void setProjectionAndCamera() {
 
+        if (debugMode) {
+            firstPersonCameraController.update();
+        } else {
+        }
+            camera.position.set(tmpV.x, 6, 2);
+            camera.direction.set(tmpV.x, 0, -4).sub(camera.position).nor();
+            camera.update();
     }
 
 }
