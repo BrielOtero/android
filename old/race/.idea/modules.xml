@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/race.iml" filepath="$PROJECT_DIR$/.idea/modules/race.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/race.android.iml" filepath="$PROJECT_DIR$/.idea/modules/android/race.android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/race.android.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/android/race.android.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/race.android.main.iml" filepath="$PROJECT_DIR$/.idea/modules/android/race.android.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/race.android.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/android/race.android.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/race.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/race.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/race.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/race.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/race.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/race.core.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/race.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/race.desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/race.desktop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/race.desktop.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/race.desktop.test.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/race.desktop.test.iml" />
+    </modules>
+  </component>
+</project>
