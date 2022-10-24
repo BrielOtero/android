@@ -1,0 +1,34 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button
+id button10
+id button11
+id button12
+id button16
+id button17
+id button18
+id button2
+id button3
+id button4
+id button5
+id button6
+id button7
+id button8
+id button9
+id guideline2
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.03exercise
+xml backup_rules
+xml data_extraction_rules

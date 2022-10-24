@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/02-exercise.iml" filepath="$PROJECT_DIR$/.idea/modules/02-exercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/02-exercise.android.iml" filepath="$PROJECT_DIR$/.idea/modules/android/02-exercise.android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/02-exercise.android.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/android/02-exercise.android.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/02-exercise.android.main.iml" filepath="$PROJECT_DIR$/.idea/modules/android/02-exercise.android.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/02-exercise.android.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/android/02-exercise.android.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/02-exercise.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/02-exercise.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/02-exercise.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/02-exercise.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/02-exercise.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/02-exercise.core.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/02-exercise.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/02-exercise.desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/02-exercise.desktop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/02-exercise.desktop.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/02-exercise.desktop.test.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/02-exercise.desktop.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/html/02-exercise.html.iml" filepath="$PROJECT_DIR$/.idea/modules/html/02-exercise.html.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/html/02-exercise.html.main.iml" filepath="$PROJECT_DIR$/.idea/modules/html/02-exercise.html.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/html/02-exercise.html.test.iml" filepath="$PROJECT_DIR$/.idea/modules/html/02-exercise.html.test.iml" />
+    </modules>
+  </component>
+</project>

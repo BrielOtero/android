@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1c45f301-e8e6-400e-b6c4-258a3ce94679" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a05_exercise/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a05_exercise/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a05_exercise/MainActivity2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a05_exercise/MainActivity2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Mode7Racer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Mundus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dl13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dl9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/ic_launcher-web.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/res/drawable-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/res/drawable-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/res/drawable-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/res/drawable-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/android/src/com/gabriel/game/AndroidLauncher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/crosshair/crossHairInnerRing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/crosshair/crossHairOuterRing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/crosshair/crossHairPoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/crosshair/crosshairOuter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/Color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/GUNMODEL.g3dj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/arena.g3dj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/backgroundMN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/badlogic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/brick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/default.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/dieparticle.pfx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/gameOver.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/ground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/monster.g3dj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/monster.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/pre_particle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/space.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/spacedome.g3db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/title.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/touchBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/touchKnob.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/uiskin.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/uiskin.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/assets/data/uiskin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/Assets.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/Core.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/GameWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/Settings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/UI/CrosshairWidget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/UI/EnergyWidget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/UI/GameOverWidget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/UI/GameUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/UI/HealthWidget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/UI/OxygenWidget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/UI/PauseWidget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/UI/ScoreWidget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/bullet/MotionState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/components/AnimationComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/components/BulletComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/components/CharacterComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/components/DieParticleComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/components/EnemyComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/components/GunComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/components/ModelComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/components/PlayerComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/components/StatusComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/managers/ControllerWidget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/managers/EnemyAnimations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/managers/EntityFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/screens/GameScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/screens/LeaderboardsScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/screens/MainMenuScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/systems/BulletSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/systems/EnemySystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/systems/PlayerSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/systems/RenderSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/core/src/com/gabriel/game/systems/StatusSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/desktop/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/desktop/src/com/gabriel/game/DesktopLauncher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game - Copy/BeatSlide2/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../libgdx-runner" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tutorial-space-platform" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[7838873b]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Fw5tsqmJ7PLWavddRSHBImNTEC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="05-exercise.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+        <option name="PROFILING_MODE" value="NOT_SET" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c45f301-e8e6-400e-b6c4-258a3ce94679" name="Changes" comment="" />
+      <created>1665390523977</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665390523977</updated>
+    </task>
+    <servers />
+  </component>
+</project>
