@@ -1,5 +1,0 @@
-{
-    "$schema": "http://json-schema.org/draft-06/schema#",
-    "title": "Monster Definitions",
-    "$ref": "../managers/MonsterManager.schema.json"
-}
