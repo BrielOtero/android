@@ -8,8 +8,12 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -275,7 +279,6 @@ public class MainActivity extends AppCompatActivity {
         return peliculas;
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -283,17 +286,22 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new Adapter(movies);
         recyclerView = findViewById(R.id.rv);
-        StaggeredGridLayoutManager sglm = new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager sglm = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(sglm);
         recyclerView.setAdapter(adapter);
 
-
     }
+
+
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu,menu);
+        menuInflater.inflate(R.menu.menu, menu);
 
         return true;
     }

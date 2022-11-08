@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,9 +14,20 @@ import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
     ArrayList<Pelicula> peliculas;
+    int pos = RecyclerView.NO_POSITION;
+    TextView txtValue;
 
-    public Adapter(ArrayList<Pelicula> peliculas){
-        this.peliculas=peliculas;
+    public int getPos() {
+        return pos;
+    }
+
+    public void setPos(int pos) {
+        this.pos = pos;
+        notifyItemChanged(pos);
+    }
+
+    public Adapter(ArrayList<Pelicula> peliculas) {
+        this.peliculas = peliculas;
     }
 
     @NonNull
@@ -23,7 +35,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
     public Vh onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.celda, parent, false);
         Vh vh = new Vh(view);
-
         return vh;
     }
 
@@ -33,6 +44,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
         holder.tvDirector.setText(peliculas.get(position).director);
         holder.imgCover.setImageResource(peliculas.get(position).portada);
         holder.imgAge.setImageResource(peliculas.get(position).clasi);
+
     }
 
     @Override
@@ -45,6 +57,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
         public TextView tvDirector;
         public ImageView imgCover;
         public ImageView imgAge;
+//        public TextView txtValue;
 
 
         public Vh(@NonNull View itemView) {
@@ -54,6 +67,18 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
             this.tvDirector = itemView.findViewById(R.id.tvDirector);
             this.imgCover = itemView.findViewById(R.id.imgCover);
             this.imgAge = itemView.findViewById(R.id.imgAge);
+            txtValue = itemView.findViewById(R.id.txtSelectedMovie);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    setPos(getAdapterPosition());
+                    if (getPos() > RecyclerView.NO_POSITION) {
+//                    txtValue.setText("value");
+//                        Toast.makeText(v.getContext(), getPos()+"", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
         }
     }
 
