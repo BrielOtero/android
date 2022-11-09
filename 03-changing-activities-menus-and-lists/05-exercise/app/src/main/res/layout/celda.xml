@@ -3,48 +3,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="32dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvDirector"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
-        app:layout_constraintStart_toEndOf="@+id/tvTitle"
-        app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imgCover"
+        android:id="@+id/imgCoverPreview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/tvTitle"
+        android:background="#E91E63"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/akira" />
 
+    <TextView
+        android:id="@+id/tvColor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#66E91E63"
+        app:layout_constraintBottom_toBottomOf="@+id/imgCoverPreview"
+        app:layout_constraintEnd_toEndOf="@+id/imgCoverPreview"
+        app:layout_constraintStart_toStartOf="@+id/imgCoverPreview"
+        app:layout_constraintTop_toTopOf="@+id/imgCoverPreview" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#4D000000"
+        android:backgroundTintMode="add"
+        android:padding="4dp"
+        android:shadowColor="#000000"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imgCoverPreview"
+        app:layout_constraintStart_toStartOf="@+id/imgCoverPreview"
+        app:layout_constraintTop_toTopOf="@+id/imgCoverPreview" />
+
+    <TextView
+        android:id="@+id/tvDirector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#4D000000"
+        android:backgroundTintMode="add"
+        android:padding="4dp"
+        android:shadowColor="#000000"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
     <ImageView
         android:id="@+id/imgAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvDirector"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="#F8F4F4"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgCoverPreview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvDirector"
         app:srcCompat="@drawable/r" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,8 @@
 package com.example.a05_exercise;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -12,6 +14,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -283,19 +287,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ImageView imgCoverPreview = findViewById(R.id.imgCoverPreview);
+        TextView txtSelectedMovieInfo = findViewById(R.id.txtSelectedMovieInfo);
+        imgCoverPreview.setVisibility(View.GONE);
+        txtSelectedMovieInfo.setVisibility(View.GONE);
 
         adapter = new Adapter(movies);
+//        StaggeredGridLayoutManager sglm = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
+        GridLayoutManager grid = new GridLayoutManager(this, 1, LinearLayoutManager.VERTICAL, false);
         recyclerView = findViewById(R.id.rv);
-        StaggeredGridLayoutManager sglm = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(sglm);
+        recyclerView.setLayoutManager(grid);
         recyclerView.setAdapter(adapter);
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+
+                if (adapter.getPos() == RecyclerView.NO_POSITION) {
+                    imgCoverPreview.setVisibility(View.GONE);
+                    txtSelectedMovieInfo.setVisibility(View.GONE);
+                } else {
+                    imgCoverPreview.setVisibility(View.VISIBLE);
+                    txtSelectedMovieInfo.setVisibility(View.VISIBLE);
+
+                }
+                imgCoverPreview.setImageResource(adapter.getImgPreview());
+            }
+        };
+        adapter.setListener(listener);
     }
-
-
-
-
-
 
 
     @Override

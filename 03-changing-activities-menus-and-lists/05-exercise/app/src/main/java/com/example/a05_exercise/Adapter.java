@@ -16,14 +16,34 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
     ArrayList<Pelicula> peliculas;
     int pos = RecyclerView.NO_POSITION;
     TextView txtValue;
+    View.OnClickListener listener;
+    int imgPreview;
+
+    public int getImgPreview() {
+        return imgPreview;
+    }
+
+    public void setListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
 
     public int getPos() {
         return pos;
     }
 
     public void setPos(int pos) {
-        this.pos = pos;
-        notifyItemChanged(pos);
+        if (getPos() == pos) {
+            this.pos = RecyclerView.NO_POSITION;
+            notifyItemChanged(this.pos);
+        } else {
+
+            if (this.pos > RecyclerView.NO_POSITION) {
+                notifyItemChanged(this.pos);
+            }
+            this.pos = pos;
+            notifyItemChanged(pos);
+        }
+
     }
 
     public Adapter(ArrayList<Pelicula> peliculas) {
@@ -44,6 +64,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
         holder.tvDirector.setText(peliculas.get(position).director);
         holder.imgCover.setImageResource(peliculas.get(position).portada);
         holder.imgAge.setImageResource(peliculas.get(position).clasi);
+        this.imgPreview = peliculas.get(position).portada;
+
+        if (getPos() == position) {
+            holder.tvColor.setVisibility(View.VISIBLE);
+        } else {
+            holder.tvColor.setVisibility(View.INVISIBLE);
+        }
+
+
 
     }
 
@@ -57,7 +86,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
         public TextView tvDirector;
         public ImageView imgCover;
         public ImageView imgAge;
-//        public TextView txtValue;
+        public TextView tvColor;
 
 
         public Vh(@NonNull View itemView) {
@@ -65,25 +94,21 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
 
             this.tvTitle = itemView.findViewById(R.id.tvTitle);
             this.tvDirector = itemView.findViewById(R.id.tvDirector);
-            this.imgCover = itemView.findViewById(R.id.imgCover);
+            this.imgCover = itemView.findViewById(R.id.imgCoverPreview);
             this.imgAge = itemView.findViewById(R.id.imgAge);
-            txtValue = itemView.findViewById(R.id.txtSelectedMovie);
+            this.tvColor = itemView.findViewById(R.id.tvColor);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     setPos(getAdapterPosition());
                     if (getPos() > RecyclerView.NO_POSITION) {
-//                    txtValue.setText("value");
-//                        Toast.makeText(v.getContext(), getPos()+"", Toast.LENGTH_LONG).show();
+                        Toast.makeText(v.getContext(), getPos() + "", Toast.LENGTH_SHORT).show();
+                        listener.onClick(v);
                     }
                 }
             });
         }
     }
-
-
-//ArrayList<Pelicula> peliculas;
-//int pos
 
 }
