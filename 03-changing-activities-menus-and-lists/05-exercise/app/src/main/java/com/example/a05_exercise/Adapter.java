@@ -16,6 +16,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
     ArrayList<Pelicula> peliculas;
     int pos = RecyclerView.NO_POSITION;
     TextView txtValue;
+    TextView oldTextClicked;
     View.OnClickListener listener;
     int imgPreview;
 
@@ -36,7 +37,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
             this.pos = RecyclerView.NO_POSITION;
             notifyItemChanged(this.pos);
         } else {
-
             if (this.pos > RecyclerView.NO_POSITION) {
                 notifyItemChanged(this.pos);
             }
@@ -65,13 +65,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
         holder.imgCover.setImageResource(peliculas.get(position).portada);
         holder.imgAge.setImageResource(peliculas.get(position).clasi);
         this.imgPreview = peliculas.get(position).portada;
-
+        holder.tvColor.setVisibility(View.INVISIBLE);
         if (getPos() == position) {
             holder.tvColor.setVisibility(View.VISIBLE);
-        } else {
-            holder.tvColor.setVisibility(View.INVISIBLE);
         }
-
 
 
     }
@@ -104,8 +101,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
                     setPos(getAdapterPosition());
                     if (getPos() > RecyclerView.NO_POSITION) {
                         Toast.makeText(v.getContext(), getPos() + "", Toast.LENGTH_SHORT).show();
-                        listener.onClick(v);
                     }
+                        listener.onClick(v);
                 }
             });
         }

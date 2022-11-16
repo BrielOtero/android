@@ -1,5 +1,6 @@
 package com.example.a05_exercise;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -301,8 +303,6 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 if (adapter.getPos() == RecyclerView.NO_POSITION) {
                     imgCoverPreview.setVisibility(View.GONE);
                     txtSelectedMovieInfo.setVisibility(View.GONE);
@@ -315,6 +315,19 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         adapter.setListener(listener);
+
+        Button btnHide = findViewById(R.id.btnHide);
+        btnHide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActionBar actionBar = getSupportActionBar();
+                if (actionBar.isShowing()) {
+                    actionBar.hide();
+                } else {
+                    actionBar.show();
+                }
+            }
+        });
     }
 
 
