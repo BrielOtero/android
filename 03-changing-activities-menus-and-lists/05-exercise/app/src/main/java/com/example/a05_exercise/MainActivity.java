@@ -1,5 +1,6 @@
 package com.example.a05_exercise;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
@@ -337,5 +339,22 @@ public class MainActivity extends AppCompatActivity {
         menuInflater.inflate(R.menu.menu, menu);
 
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mnuAllElements:
+                Intent intent = new Intent(MainActivity.this, SecondaryActivity.class);
+                intent.putExtra("movies",movies);
+                startActivity(intent);
+
+                break;
+            case R.id.mnuAddPremiere:
+                break;
+            case R.id.mnuFavorites:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

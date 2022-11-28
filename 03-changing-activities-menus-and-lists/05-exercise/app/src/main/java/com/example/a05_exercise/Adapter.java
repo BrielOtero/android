@@ -60,11 +60,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
 
     @Override
     public void onBindViewHolder(@NonNull Vh holder, int position) {
-        holder.tvTitle.setText(peliculas.get(position).titulo);
-        holder.tvDirector.setText(peliculas.get(position).director);
-        holder.imgCover.setImageResource(peliculas.get(position).portada);
-        holder.imgAge.setImageResource(peliculas.get(position).clasi);
-        this.imgPreview = peliculas.get(position).portada;
+        holder.tvTitle.setText(peliculas.get(position).getTitulo());
+        holder.tvDirector.setText(peliculas.get(position).getDirector());
+        holder.imgCover.setImageResource(peliculas.get(position).getPortada());
+        holder.imgAge.setImageResource(peliculas.get(position).getClasi());
+        this.imgPreview = peliculas.get(position).getPortada();
         holder.tvColor.setVisibility(View.INVISIBLE);
         if (getPos() == position) {
             holder.tvColor.setVisibility(View.VISIBLE);

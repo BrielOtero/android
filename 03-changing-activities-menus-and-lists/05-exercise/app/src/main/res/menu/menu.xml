@@ -3,11 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/mnuAllElements"
         android:icon="@android:drawable/ic_dialog_dialer"
         android:iconTint="#FFFFFF"
         android:title="All Elements"
         android:visible="true"
         app:showAsAction="always|withText" />
-    <item android:title="Favorites" />
-    <item android:title="Add Premiere" />
+    <item
+        android:id="@+id/mnuFavorites"
+        android:title="Favorites" />
+    <item
+        android:id="@+id/mnuAddPremiere"
+        android:title="Add Premiere" />
 </menu>

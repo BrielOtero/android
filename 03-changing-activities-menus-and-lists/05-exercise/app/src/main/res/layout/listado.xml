@@ -25,27 +25,29 @@
         android:id="@+id/txtDirectorListado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="8dp"
         android:text="TextView"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/imgAgeListado"
-        app:layout_constraintStart_toEndOf="@+id/imgAgeListado" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgAgeListado"
+        app:layout_constraintStart_toEndOf="@+id/imgAgeListado"
+        app:layout_constraintTop_toTopOf="@+id/imgAgeListado" />
 
     <TextView
         android:id="@+id/txtDataPremiereListado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
         android:text="TextView"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/imgAgeListado"
-        app:layout_constraintTop_toBottomOf="@+id/imgAgeListado" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtDurationListado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="8dp"
         android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/txtDirectorListado"
@@ -55,19 +57,31 @@
         android:id="@+id/txtRoomListado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="8dp"
         android:text="TextView"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/txtDataPremiereListado"
-        app:layout_constraintTop_toTopOf="@+id/txtDataPremiereListado" />
+        app:layout_constraintStart_toEndOf="@+id/txtDurationListado"
+        app:layout_constraintTop_toTopOf="@+id/txtDurationListado" />
 
     <ImageView
         android:id="@+id/imgAgeListado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="64dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtDataPremiereListado"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/g" />
+
+    <ImageView
+        android:id="@+id/imgFav"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/favorite" />
 </androidx.constraintlayout.widget.ConstraintLayout>

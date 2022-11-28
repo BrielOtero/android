@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/invaders.iml" filepath="$PROJECT_DIR$/.idea/modules/invaders.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/invaders.android.iml" filepath="$PROJECT_DIR$/.idea/modules/android/invaders.android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/invaders.android.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/android/invaders.android.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/invaders.android.main.iml" filepath="$PROJECT_DIR$/.idea/modules/android/invaders.android.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/invaders.android.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/android/invaders.android.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/invaders.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/invaders.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/invaders.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/invaders.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/invaders.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/invaders.core.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/invaders.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/invaders.desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/invaders.desktop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/invaders.desktop.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/invaders.desktop.test.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/invaders.desktop.test.iml" />
+    </modules>
+  </component>
+</project>
