@@ -20,7 +20,7 @@ public class SecondaryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_secondary);
         Intent intent = getIntent();
         ArrayList<Pelicula>movies= (ArrayList<Pelicula>)intent.getSerializableExtra("movies");
-        adapterListado = new AdapterListado(movies);
+        adapterListado = new AdapterListado(this,movies);
         GridLayoutManager grid= new GridLayoutManager(this,1, LinearLayoutManager.VERTICAL,false);
         recyclerViewListado= findViewById(R.id.rvListado);
         recyclerViewListado.setLayoutManager(grid);

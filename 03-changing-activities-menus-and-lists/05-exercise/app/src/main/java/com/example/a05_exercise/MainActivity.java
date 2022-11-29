@@ -6,22 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -31,15 +27,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Adapter adapter;
 
-    public void watchYoutubeVideo(String id) {
-        Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
-        Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
-        try {
-            startActivity(appIntent);
-        } catch (ActivityNotFoundException ex) {
-            startActivity(webIntent);
-        }
-    }
 
     public ArrayList<Pelicula> rellenaPeliculas() {
 
@@ -345,14 +332,19 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.mnuAllElements:
-                Intent intent = new Intent(MainActivity.this, SecondaryActivity.class);
-                intent.putExtra("movies",movies);
-                startActivity(intent);
+                Intent intentTodaLaInformacion = new Intent(this, SecondaryActivity.class);
+                intentTodaLaInformacion.putExtra("movies",movies);
+                startActivity(intentTodaLaInformacion);
 
                 break;
             case R.id.mnuAddPremiere:
                 break;
             case R.id.mnuFavorites:
+                Intent intentFavoritos = new Intent(this,FavoritosActivity.class);
+                intentFavoritos.putExtra("movies",movies);
+                startActivity(intentFavoritos);
+
+
                 break;
         }
         return super.onOptionsItemSelected(item);

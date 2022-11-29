@@ -1,5 +1,7 @@
 package com.example.a05_exercise;
 
+import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +16,10 @@ import java.util.ArrayList;
 
 public class AdapterListado extends RecyclerView.Adapter<AdapterListado.ListadoVh> {
     ArrayList<Pelicula> movies;
+    Context context;
 
-    public AdapterListado(ArrayList<Pelicula> movies) {
-
+    public AdapterListado(Context context, ArrayList<Pelicula> movies) {
+        this.context = context;
         this.movies = movies;
     }
 
@@ -69,6 +72,17 @@ public class AdapterListado extends RecyclerView.Adapter<AdapterListado.ListadoV
             txtDataPremiereListado = itemView.findViewById(R.id.txtDataPremiereListado);
             txtDurationListado = itemView.findViewById(R.id.txtDurationListado);
             txtRoomListado = itemView.findViewById(R.id.txtRoomListado);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, PeliculaActivity.class);
+                    intent.putExtra("image",movies.get(getAdapterPosition()).getPortada());
+                    intent.putExtra("sinopsis",movies.get(getAdapterPosition()).getSinopsis());
+                    intent.putExtra("idYoutube",movies.get(getAdapterPosition()).getIdYoutube());
+                    view.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }
