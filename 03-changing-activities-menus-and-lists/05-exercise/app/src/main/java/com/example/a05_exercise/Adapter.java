@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
+
+
+
     ArrayList<Pelicula> peliculas;
     int pos = RecyclerView.NO_POSITION;
     TextView txtValue;
@@ -49,6 +52,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
     public Adapter(ArrayList<Pelicula> peliculas) {
         this.peliculas = peliculas;
     }
+
+    public void updatePeliculas(ArrayList<Pelicula> peliculas) {
+        this.peliculas = peliculas;
+    }
+
 
     @NonNull
     @Override
@@ -102,7 +110,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vh> {
                     if (getPos() > RecyclerView.NO_POSITION) {
                         Toast.makeText(v.getContext(), getPos() + "", Toast.LENGTH_SHORT).show();
                     }
-                        listener.onClick(v);
+                    listener.onClick(v);
                 }
             });
         }

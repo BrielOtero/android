@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyRecycledView</string>
+    <string name="nombre">Liss</string>
+    <string name="titleFilm">Título película</string>
+</resources>

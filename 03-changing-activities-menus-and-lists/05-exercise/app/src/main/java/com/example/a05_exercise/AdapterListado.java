@@ -22,6 +22,9 @@ public class AdapterListado extends RecyclerView.Adapter<AdapterListado.ListadoV
         this.context = context;
         this.movies = movies;
     }
+    public void updatePeliculas(ArrayList<Pelicula> peliculas){
+        this.movies = peliculas;
+    }
 
     @NonNull
     @Override

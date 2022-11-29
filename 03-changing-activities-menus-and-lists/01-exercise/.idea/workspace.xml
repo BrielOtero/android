@@ -9,13 +9,23 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4136d07-8ba5-450c-a130-e40580e54dce" name="Changes" comment="" />
+    <list default="true" id="c4136d07-8ba5-450c-a130-e40580e54dce" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../05-exercise/app/src/main/java/com/example/a05_exercise/Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../05-exercise/app/src/main/java/com/example/a05_exercise/Adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../05-exercise/app/src/main/java/com/example/a05_exercise/AdapterListado.java" beforeDir="false" afterPath="$PROJECT_DIR$/../05-exercise/app/src/main/java/com/example/a05_exercise/AdapterListado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../05-exercise/app/src/main/java/com/example/a05_exercise/FavoritosActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../05-exercise/app/src/main/java/com/example/a05_exercise/FavoritosActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../05-exercise/app/src/main/java/com/example/a05_exercise/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../05-exercise/app/src/main/java/com/example/a05_exercise/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../05-exercise/app/src/main/java/com/example/a05_exercise/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/../05-exercise/app/src/main/java/com/example/a05_exercise/Pelicula.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[adb-7838873b-vZdu1G._adb-tls-connect._tcp]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -40,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Mundus" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
   </component>
   <component name="RecentsManager">

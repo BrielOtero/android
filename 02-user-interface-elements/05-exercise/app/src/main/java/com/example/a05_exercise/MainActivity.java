@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 switch1.setChecked(false);
                 rd1.setChecked(false);
                 rd2.setChecked(false);
-
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {

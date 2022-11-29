@@ -1,5 +1,9 @@
 package com.example.a05_exercise;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,9 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -26,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Pelicula> movies = rellenaPeliculas();
     RecyclerView recyclerView;
     Adapter adapter;
-
+    ActivityResultLauncher<Intent> launcherFav;
+    ActivityResultLauncher<Intent> launcherAdd;
+    Pelicula pelicula;
 
     public ArrayList<Pelicula> rellenaPeliculas() {
 
@@ -289,6 +294,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rv);
         recyclerView.setLayoutManager(grid);
         recyclerView.setAdapter(adapter);
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -317,6 +323,29 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        launcherFav = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == RESULT_OK) {
+                    Intent intentLau = result.getData();
+
+                    movies = (ArrayList<Pelicula>) intentLau.getSerializableExtra("movies");
+                }
+
+            }
+        });
+
+        launcherAdd = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == RESULT_OK) {
+                    pelicula = (Pelicula) result.getData().getSerializableExtra("pelicula");
+                    movies.add(pelicula);
+                    adapter.notifyItemInserted(movies.size()-1);
+                }
+            }
+        });
     }
 
 
@@ -330,21 +359,24 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+
         switch (item.getItemId()) {
             case R.id.mnuAllElements:
                 Intent intentTodaLaInformacion = new Intent(this, SecondaryActivity.class);
-                intentTodaLaInformacion.putExtra("movies",movies);
+                intentTodaLaInformacion.putExtra("movies", movies);
                 startActivity(intentTodaLaInformacion);
-
                 break;
+
             case R.id.mnuAddPremiere:
+                Intent intentAdd = new Intent(MainActivity.this, AddActivity.class);
+                launcherAdd.launch(intentAdd);
                 break;
+
             case R.id.mnuFavorites:
-                Intent intentFavoritos = new Intent(this,FavoritosActivity.class);
-                intentFavoritos.putExtra("movies",movies);
-                startActivity(intentFavoritos);
-
-
+                Intent intentFavoritos = new Intent(MainActivity.this, FavoritosActivity.class);
+                intentFavoritos.putExtra("movies", movies);
+                launcherFav.launch(intentFavoritos);
                 break;
         }
         return super.onOptionsItemSelected(item);
