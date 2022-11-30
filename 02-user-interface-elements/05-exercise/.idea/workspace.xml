@@ -13,27 +13,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ac2989a-5373-4682-b5b8-216c59d6c705" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a05_exercise/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a05_exercise/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/01-exercise/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/01-exercise/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/01-exercise/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/01-exercise/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/01-exercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/01-exercise/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/01-exercise/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/01-exercise/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/java/com/example/a05_exercise/Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/java/com/example/a05_exercise/Adapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/java/com/example/a05_exercise/AdapterListado.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/java/com/example/a05_exercise/AdapterListado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/java/com/example/a05_exercise/FavoritosActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/java/com/example/a05_exercise/FavoritosActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/java/com/example/a05_exercise/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/java/com/example/a05_exercise/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/java/com/example/a05_exercise/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/java/com/example/a05_exercise/Pelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/res/menu/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/05-exercise/app/src/main/res/menu/menu.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[adb-7838873b-vZdu1G._adb-tls-connect._tcp]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ID\.android\avd\Pixel_6_Pro_API_29.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -56,7 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../03-changing-activities-menus-and-lists/01-exercise" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">

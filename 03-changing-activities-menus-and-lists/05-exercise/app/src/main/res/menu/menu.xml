@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/mnuAllElements"
-        android:icon="@android:drawable/ic_dialog_dialer"
+        android:icon="@drawable/ic_baseline_menu_24"
         android:iconTint="#FFFFFF"
         android:title="All Elements"
         android:visible="true"
